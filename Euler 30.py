@@ -1,7 +1,7 @@
 ﻿import time
 import pdb
 
-print("Euler 30 - Digit fifth powers")
+print("Euler p 30 - Digit fifth powers")
 
 e = "y"
 
