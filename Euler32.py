@@ -10,14 +10,17 @@ def check(prod, div):
   for i in range(1,10):
     if str(i) not in dig:
       return False
+  print(prod, "=", div, "*", quot)
   return True
 
 e = "y"
+print("Euler Problem 32 - Pandigital products")
+
 while e == "y":
   pn = []
   old = time.time()
   for i in range(1000, 10000):
-    for k in range(1, i//10):
+    for k in range(2, 100):
       if (i%k == 0):
         if check(i, k):
           pn.append(i)
