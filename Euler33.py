@@ -33,11 +33,9 @@ while e == "y":
 				print(k, i)
 				co *= k
 				deno *= i
-	print(co, deno)
 	i = co
 	while i > 2:
 	  if co%i == 0 and deno%i == 0:
-	    print(co, deno, i)
 	    co = co/i
 	    deno = deno/i
 	    break
