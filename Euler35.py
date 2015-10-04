@@ -1,6 +1,7 @@
 import time
 import math
-import itertools
+import pdb
+import re
 
 print("Euler 35 - circular primes")
 
@@ -35,16 +36,23 @@ while e == "y":
 		if primes_h[i]==1:
 			primes.append(i)
 		i+=1
-	print(primes, time.time()-old)
 	count = 0
 
 	test = []
+	expression = re.compile('[0|2|4|5|6|8]')
 	for i in primes:
+		if i> 10 and expression.search(str(i)) is not None:
+			continue
 		check = True
-		permuts = itertools.permutations(list(str(i)))
-		permutints = [int(''.join(x)) for x in permuts]
-		print(permutints)
-		for k in permutints:
+		istr = str(i)
+		rotations = []
+		length = len(istr)
+		for x in range(0,length):
+			h = ""
+			for y in range(x, x+length):
+				h += istr[y%length]
+			rotations.append(int(h))
+		for k in rotations:
 			if k not in primes:
 				check = False
 				break
